@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerController : MonoBehaviour
     private PlayerControls _playerControls;
     private Vector2 _movement;
     private Rigidbody2D _rb;
+    private Animator _animator;
+    private SpriteRenderer _spriteRenderer;
 
     private void Awake()
     {
@@ -27,16 +30,33 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        AdjustPlayerFacingDirection();
         Move();
     }
 
     private void PlayerInput()
     {
         _movement = _playerControls.Movement.Move.ReadValue<Vector2>();
+        _animator.SetFloat("MoveX", _movement.x);
+        _animator.SetFloat("MoveY", _movement.y);
     }
 
     private void Move()
     {
         _rb.MovePosition(_rb.position + _movement * (moveSpeed * Time.fixedDeltaTime));
+    }
+
+    private void AdjustPlayerFacingDirection()
+    {
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
+        if (mousePos.x < playerScreenPoint.x)
+        {
+            _spriteRenderer.flipX = true;
+        }
+        else
+        {
+            _spriteRenderer.flipX = false;
+        }
     }
 }
