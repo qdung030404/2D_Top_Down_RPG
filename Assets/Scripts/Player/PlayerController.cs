@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     {
         _playerControls = new PlayerControls();
         _rb = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>(); 
+        _spriteRenderer = GetComponent<SpriteRenderer>(); 
     }
 
     private void OnEnable()
