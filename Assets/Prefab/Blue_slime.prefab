@@ -250,3 +250,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHP
   startingHP: 4
+  VFXPrefab: {fileID: 5110050586543755465, guid: b00668c9db049fd41b24920036f68522, type: 3}

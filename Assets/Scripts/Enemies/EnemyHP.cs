@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnemyHP : MonoBehaviour
 {
     [SerializeField] private int startingHP = 2;
+    [SerializeField] private GameObject VFXPrefab;
     private int currentHP;
     private knockback _knockback;
     private Flash _flash;
@@ -30,6 +31,7 @@ public class EnemyHP : MonoBehaviour
     {
         if (currentHP <= 0)
         {
+            Instantiate(VFXPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
