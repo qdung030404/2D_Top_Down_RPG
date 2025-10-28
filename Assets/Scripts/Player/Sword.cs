@@ -72,6 +72,7 @@ public class Sword : MonoBehaviour
         {
             _isAttacking = true;
             _animator.SetTrigger("Attack");
+            weaponCollider.gameObject.SetActive(true);
             _slashAnim = Instantiate(slashAnimPrefab, slashAnimSpwanPoint.position, Quaternion.identity);
             _slashAnim.transform.parent = this.transform.parent;
             StartCoroutine(AttackCDRoutine());
