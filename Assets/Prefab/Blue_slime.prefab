@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 1078826891114930650}
   - component: {fileID: 6526399224025817745}
   - component: {fileID: 6546890201081743043}
+  - component: {fileID: 8417054604230425164}
   - component: {fileID: 4305787951314068375}
+  - component: {fileID: 951127161511113972}
   - component: {fileID: 3945375072910000835}
   m_Layer: 0
   m_Name: Blue_slime
@@ -186,6 +188,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPathFinding
   _moveSpeed: 2
+--- !u!114 &8417054604230425164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689815874768000826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079ad22f252b64640a1dade47d484f87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::knockback
+  knockbackTime: 0.1
 --- !u!95 &4305787951314068375
 Animator:
   serializedVersion: 7
@@ -208,6 +223,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &951127161511113972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4689815874768000826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00a71b13871ef44fa816fbf7dad6a57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Flash
+  _material: {fileID: 2100000, guid: b8ac18aa574f3f54c8054587cc5fb115, type: 2}
+  _restoreDefaultMatTime: 0.2
 --- !u!114 &3945375072910000835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,3 +249,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4004645fb922747a2cfab5a38508fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHP
+  startingHP: 4
